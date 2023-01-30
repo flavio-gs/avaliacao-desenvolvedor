@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorator="'layout/LayoutPadrao'" xmlns:arquitetura="http://arquitetura.algaworks.com">
+  
+  <head>
+<title>Cadastro de Pessoa</title>
+<link rel="stylesheet" type="text/css" th:href="@{/stylesheets/vendors/bootstrap-switch.min.css}" />
+<link rel="stylesheet" th:href="@{/stylesheets/vendors/upload.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/stylesheets/vendors/bootstrap-datepicker.standalone.min.css}" />
+<link rel="stylesheet" th:href="@{/stylesheets/vendors/easy-autocomplete.min.css}" />
+<link rel="stylesheet" th:href="@{/stylesheets/vendors/easy-autocomplete.themes.min.css}" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+<!-- <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/css/bootstrap-switch-button.min.css" rel="stylesheet"> -->
+</head>
+<body>
+  <section layout:fragment="conteudo">
+    <div class="page-header">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-10">
+            <h1>Cadastro de Endereço</h1>
+           </div>
+          <div class="col-xs-2">
+            <div class="aw-page-header-controls">
+              <a class="btn  btn-default" th:href="@{/pessoa}">
+                <i class="glyphicon  glyphicon-search"></i>
+                <span class="hidden-xs  hidden-sm">Pesquisa</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="form-group">
+          <div class="col-sm-12">
+            <ul class="nav nav-tabs" style="margin-bottom: 5px;">
+              <li class="active">
+                <a data-toggle="tab" href="#home">Dados Pessoais</a>
+              </li>
+              <!-- <li th:classappend="${pessoa.novo} ? disabled ">
+                <a th:unless="${pessoa.novo}" data-toggle="tab" href="#pai">Responsáveis</a>
+                <a th:if="${pessoa.novo}" data-toggle="tab" href="#">Responsáveis</a>
+              </li> -->
+              
+             <div class="form-group col-sm-4">
+                        <label class="control-label" for="cep">Cep</label>
+                        <input type="text" class="form-control" id="cep" />
+                    </div>
+                    
+                    <div class="form-group col-sm-4">
+                        <label class="control-label" for="endereco">Endereço</label>
+                        <input type="text" class="form-control" id="endereco"/>
+                    </div>
+                    
+                    
+                    <div class="form-group col-sm-4">
+                        <label class="control-label" for="bairro">Bairro</label>
+                        <input type="text" class="form-control" id="bairro"/>
+                    </div>
+                    
+                    <div class="form-group col-sm-4">
+                        <label class="control-label" for="cidade">Cidade</label>
+                        <input type="text" class="form-control" id="cidade"/>
+                    </div>
+                    
+              
+            </ul>
+            <input type="hidden" name="aba" th:value="${aba}" />
+            
+            
+             <div class="form-group  col-sm-4" style="margin-top: 22px">
+                        <button type="submit" class="btn  btn-primary">Adicionar</button>
+                    </div
+            
+          </div>
+        </div>
+      </div>
+    </div>
+   </section>
+  <th:block layout:fragment="javascript-extra">
+    <script th:src="@{/javascripts/responsavel-militar-civil.js}"></script>
+    <script th:src="@{/javascripts/vendors/handlebars.min.js}"></script>
+    <script th:src="@{/javascripts/vendors/jquery.easy-autocomplete.min.js}"></script>
+    <script th:src="@{/javascripts/minicontrole-abas.js}"></script>
+    <script th:src="@{/javascripts/vendors/bootstrap-switch.min.js}"></script>
+    <script th:src="@{/javascripts/aluno.aba-pai.js}"></script>
+    <script th:src="@{/javascripts/cliente-mascara-cpf.js}"></script>
+    <script th:src="@{/javascripts/arquitetura.combo-forca-postgrad.js}"></script>
+    <script th:src="@{/javascripts/aluno.aba-endereco-responsavel.js}"></script>
+    <script th:src="@{/javascripts/aluno.aba-contato-responsavel.js}"></script>
+    <script th:src="@{/javascripts/endereco-webservice.js}"></script>
+    <script th:src="@{/javascripts/mascara-int-number.js}"></script>
+    
+	 
+        
+  </th:block>
+</body>
+</html>
